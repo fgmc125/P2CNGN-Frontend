@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="column" id="serversColumn">
+        <h2>Servidores</h2>
+        <ul id="serverList">
+            <!-- Lista de servidores generados dinámicamente -->
+        </ul>
+        <button id="createServer">Crear Servidor</button>
+        <button id="joinServer">Buscar Servidor</button>
+        <p>Usuario: <span id="username">Nombre de Usuario</span></p>
+    </div>
+
+    <div class="column" id="channelsColumn">
+        <h2>Canales</h2>
+        <ul id="channelList">
+            <!-- Lista de canales generados dinámicamente -->
+        </ul>
+        <button id="createChannel">Crear Canal</button>
+    </div>
+
+    <div class="column" id="messagesColumn">
+        <h2>Mensajes</h2>
+        <ul id="messageList">
+            <!-- Lista de mensajes generados dinámicamente -->
+        </ul>
+        <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
+        <button id="sendMessage">Enviar</button>
+    </div>
+
+    <script src="servers.js"></script>
+    <script src="channels.js"></script>
+    <script src="messages.js"></script>
+</body>
+</html>
