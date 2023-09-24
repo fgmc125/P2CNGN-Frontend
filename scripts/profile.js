@@ -20,6 +20,9 @@ function getProfile() {
                 document.getElementById("password").innerText = data.password;
                 document.getElementById("img").innerText = data.img;
             });
+        } else if (response.status === 401) {
+            // Usuario no autenticado, redirigir a la página de inicio de sesión
+            window.location.href = "login.html";
         } else {
             return response.json().then(data => {
                 document.getElementById("message").innerHTML = data.message;
