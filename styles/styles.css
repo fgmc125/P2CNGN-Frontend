@@ -7,16 +7,88 @@
 body,
 html {
   height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.is-flex {
+    display: flex!important;
+}
+
 .container {
+  max-width: 400px;
   flex-grow: 1;
   margin: 0 auto;
   position: relative;
   width: auto;
+}
+
+.container.is-fluid {
+    max-width: none!important;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+}
+
+.is-flex-grow-0 {
+    flex-grow: 0!important;
+}
+
+.column {
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.75rem;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+blockquote, body, dd, dl, dt, fieldset, figure, h1, h2, h3, h4, h5, h6, hr, html, iframe, legend, li, ol, p, pre, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.is-size-1 {
+    font-size: 3rem!important;
+}
+
+.subtitle {
+    color: #4a4a4a;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.modal {
+    align-items: center;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    position: fixed;
+    z-index: 40;
+}
+
+.modal.is-active {
+    display: flex;
 }
 
 body {
@@ -55,8 +127,6 @@ body {
 .breadcrumb,
 .is-unselectable,
 .tabs {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   align-items: center;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -88,6 +158,10 @@ input,
 select,
 textarea {
   margin: 0;
+}
+
+.text-error {
+    color: red;
 }
 
 .button.is-primary.is-hovered, .button.is-primary:hover {
@@ -159,9 +233,3 @@ a:hover {
 .button:active, .button:focus, .file-cta:active, .file-cta:focus, .file-name:active, .file-name:focus, .input:active, .input:focus, .is-active.button, .is-active.file-cta, .is-active.file-name, .is-active.input, .is-active.pagination-ellipsis, .is-active.pagination-link, .is-active.pagination-next, .is-active.pagination-previous, .is-active.textarea, .is-focused.button, .is-focused.file-cta, .is-focused.file-name, .is-focused.input, .is-focused.pagination-ellipsis, .is-focused.pagination-link, .is-focused.pagination-next, .is-focused.pagination-previous, .is-focused.textarea, .pagination-ellipsis:active, .pagination-ellipsis:focus, .pagination-link:active, .pagination-link:focus, .pagination-next:active, .pagination-next:focus, .pagination-previous:active, .pagination-previous:focus, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus, .textarea:active, .textarea:focus {
     outline: 0;
 }
-
-/* Estilo para el mensaje de error o éxito */
-.modal::backdrop {
-    background-color: rgba(0,0,0,0.3);
-}
-
