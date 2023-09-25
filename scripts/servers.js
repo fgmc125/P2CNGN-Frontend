@@ -1,8 +1,103 @@
 // servers.js
 // Funciones para manejar la lista de servidores
 
+// servers.js
+// Funciones para manejar la lista de servidores
+
+window.addEventListener('load', function () {
+    getProfile();
+});
+
+//document.getElementById("logout").addEventListener("click", logout);
+
+function getProfile() {
+    const url = "http://127.0.0.1:5000/user/profile";
+    
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include'
+    })
+    .then(response => {
+        if (response.status === 200) {
+            return response.json().then(data => {
+
+                document.getElementById("username").innerText = data.username;
+
+                // Corregido: Obtener la lista de servidores del backend
+                const serverUrl = "http://127.0.0.1:5000/server/" + data.user_id;
+                fetch(serverUrl, {
+                    method: 'GET',
+                    credentials: 'include'
+                })
+                .then(serverResponse => {
+                    if (serverResponse.status === 200) {
+                        return serverResponse.json().then(servers => {
+                            // Mostrar la lista de servidores en la página HTML
+                            const serverListElement = document.getElementById('serverList');
+                            for (const server of servers) {
+                                const serverListItemElement = document.createElement('li');
+                                serverListItemElement.textContent = server.name;
+                                serverListElement.appendChild(serverListItemElement);
+                            }
+                        });
+                    } else if (serverResponse.status === 401) {
+                        // Usuario no autenticado, redirigir a la página de inicio de sesión
+                        window.location.href = "login.html";
+                    } else {
+                        return serverResponse.json().then(data => {
+                            document.getElementById("message").innerHTML = data.message;
+                        });
+                    }
+                })
+                .catch(error => {
+                    document.getElementById("message").innerHTML = "An error occurred.";
+                });
+            });
+        } else if (response.status === 401) {
+            // Usuario no autenticado, redirigir a la página de inicio de sesión
+            window.location.href = "login.html";
+        } else {
+            return response.json().then(data => {
+                document.getElementById("message").innerHTML = data.message;
+            });
+        }
+    })
+    .catch(error => {
+        document.getElementById("message").innerHTML = "An error occurred.";
+    });
+}
+
+
 function loadServers() {
     // Cargar la lista de servidores del usuario desde el backend
+    
+    const url = "http://127.0.0.1:5000/user/";
+        
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include'
+    })
+    .then(response => {
+        if (response.status === 200) {
+            return response.json().then(data => {
+
+                document.getElementById("username").innerText = data.username;
+                
+            });
+        } else if (response.status === 401) {
+            // Usuario no autenticado, redirigir a la página de inicio de sesión
+            window.location.href = "login.html";
+        } else {
+            return response.json().then(data => {
+                document.getElementById("message").innerHTML = data.message;
+            });
+        }
+    })
+    .catch(error => {
+        document.getElementById("message").innerHTML = "An error occurred.";
+    });
+
+
 }
 
 function selectServer(serverId) {
@@ -15,7 +110,7 @@ function createServer() {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Obtener la lista de servidores del usuario desde la API
-    fetch('http://127.0.0.1:5000/user/servers', {
+    fetch('http://127.0.0.1:5000/servers/1', {
         method: 'GET',
         credentials: 'include'
     })

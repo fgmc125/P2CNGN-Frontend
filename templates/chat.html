@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
 </head>
+
 <body>
     <div class="column" id="serversColumn">
         <h2>Servidores</h2>
@@ -14,8 +15,12 @@
         </ul>
         <button id="createServer" onclick="createModal()">Crear Servidor</button>
         <button id="joinServer">Buscar Servidor</button>
-        <p>Usuario: <span id="username">Nombre de Usuario</span></p>
+        <!-- <p>Usuario: <span id="username">Nombre de Usuario</span></p> -->
+        <p><strong>Usuario:</strong> <span id="username"></span></p>
+        
+
     </div>
+    <div id="message"></div>
 
     <div class="column" id="channelsColumn">
         <h2>Canales</h2>
@@ -43,8 +48,11 @@
         </div>
     </div>
 
-    <script src="servers.js"></script>
-    <script src="channels.js"></script>
-    <script src="messages.js"></script>
+    
+    <script src="/scripts/servers.js"></script>
+
+
+
+
 </body>
 </html>

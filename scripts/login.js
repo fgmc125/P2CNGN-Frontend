@@ -21,7 +21,7 @@ function login() {
         if (response.status === 200) {
             // Redirect to profile page if login is successful
             return response.json().then(data => {
-                window.location.href = "profile.html";
+                window.location.href = "chat.html";
             });
         } else {
             return response.json().then(data => {
