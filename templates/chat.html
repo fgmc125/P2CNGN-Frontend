@@ -12,7 +12,7 @@
         <ul id="serverList">
             <!-- Lista de servidores generados dinámicamente -->
         </ul>
-        <button id="createServer">Crear Servidor</button>
+        <button id="createServer" onclick="createModal()">Crear Servidor</button>
         <button id="joinServer">Buscar Servidor</button>
         <p>Usuario: <span id="username">Nombre de Usuario</span></p>
     </div>
@@ -32,6 +32,15 @@
         </ul>
         <input type="text" id="messageInput" placeholder="Escribe un mensaje...">
         <button id="sendMessage">Enviar</button>
+    </div>
+
+    <!-- Ventana modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Titulo de la Ventana Modal</h2>
+            <p>Contenido de la ventana modal.</p>
+        </div>
     </div>
 
     <script src="servers.js"></script>
