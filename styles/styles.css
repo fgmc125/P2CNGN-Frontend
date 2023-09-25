@@ -1,0 +1,167 @@
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+}
+
+body {
+  color: #4a4a4a;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.control {
+  box-sizing: border-box;
+  clear: both;
+  font-size: 1rem;
+  position: relative;
+  text-align: inherit;
+}
+
+.input,
+.textarea {
+  box-shadow: inset 0 0.0625em 0.125em rgba(10, 10, 10, 0.05);
+  max-width: 100%;
+  width: 100%;
+}
+
+.button,
+.file-cta,
+.file-name,
+.input,
+.pagination-ellipsis,
+.pagination-link,
+.pagination-next,
+.pagination-previous,
+.select select,
+.textarea,
+.breadcrumb,
+.is-unselectable,
+.tabs {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+  position: relative;
+  vertical-align: top;
+}
+
+.box {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+  color: #4a4a4a;
+  display: block;
+  padding: 1.25rem;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+.button.is-primary.is-hovered, .button.is-primary:hover {
+    background-color: #00c4a7;
+    border-color: transparent;
+    color: #fff;
+}
+
+.button {
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem!important;
+}
+
+.button.is-primary {
+  background-color: #00d1b2;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.is-fullwidth {
+  display: flex;
+  width: 100%;
+}
+
+.input,
+.select select,
+.textarea {
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-radius: 4px;
+  color: #363636;
+  margin: 10px 0;
+}
+
+
+a {
+    color: #485fc7;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #363636;
+}
+
+.input:hover, .is-hovered.input, .is-hovered.textarea, .select select.is-hovered, .select select:hover, .textarea:hover {
+    border-color: #b5b5b5;
+}
+
+.input:active, .input:focus, .is-active.input, .is-active.textarea, .is-focused.input, .is-focused.textarea, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus, .textarea:active, .textarea:focus {
+    border-color: #00d1b2;
+    box-shadow: 0 0 0 0.125em rgba(72,95,199,.25);
+}
+
+.button:active, .button:focus, .file-cta:active, .file-cta:focus, .file-name:active, .file-name:focus, .input:active, .input:focus, .is-active.button, .is-active.file-cta, .is-active.file-name, .is-active.input, .is-active.pagination-ellipsis, .is-active.pagination-link, .is-active.pagination-next, .is-active.pagination-previous, .is-active.textarea, .is-focused.button, .is-focused.file-cta, .is-focused.file-name, .is-focused.input, .is-focused.pagination-ellipsis, .is-focused.pagination-link, .is-focused.pagination-next, .is-focused.pagination-previous, .is-focused.textarea, .pagination-ellipsis:active, .pagination-ellipsis:focus, .pagination-link:active, .pagination-link:focus, .pagination-next:active, .pagination-next:focus, .pagination-previous:active, .pagination-previous:focus, .select select.is-active, .select select.is-focused, .select select:active, .select select:focus, .textarea:active, .textarea:focus {
+    outline: 0;
+}
+
+/* Estilo para el mensaje de error o éxito */
+.modal::backdrop {
+    background-color: rgba(0,0,0,0.3);
+}
+
