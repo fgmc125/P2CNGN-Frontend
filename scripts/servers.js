@@ -24,7 +24,7 @@ function getProfile() {
                 document.getElementById("username").innerText = data.username;
 
                 // Corregido: Obtener la lista de servidores del backend
-                const serverUrl = "http://127.0.0.1:5000/server/" + data.user_id;
+                const serverUrl = "http://127.0.0.1:5000/server/list_user/" + data.user_id;
                 fetch(serverUrl, {
                     method: 'GET',
                     credentials: 'include'
