@@ -113,8 +113,10 @@ async function showChannel(channelId) {
       messageListElement.innerHTML = '';
       for (const message of messages) {
         // Obtiene el nombre del usuario que creó el mensaje
+        console.log(message.id_users);
         const userName = await getUserName(message.id_users);
-  
+        console.log(userName);  
+
         // Crea un elemento de lista para el mensaje
         const messageListItemElement = document.createElement('li');
         messageListItemElement.textContent = `${userName}: ${message.content} - ${message.created}`;
@@ -143,7 +145,7 @@ async function showChannel(channelId) {
       // Obtiene el usuario del backend
       const user = await response.json();
   
-      // Devuelve el nombre del usuario
+      // Devuelve solo el nombre de usuario
       return user.username;
     } else {
       // Si la solicitud no fue exitosa, devuelve un error
