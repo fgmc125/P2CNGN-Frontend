@@ -2,7 +2,7 @@
 
 function listServers(userId) {
     // Obtiene la lista de servidores del backend
-    const serverUrl = "http://127.0.0.1:5000/server/list_user/" + userId;
+    const serverUrl = "http://127.0.0.1:5000/member/user/" + userId;
     fetch(serverUrl, {
       method: 'GET',
       credentials: 'include'
@@ -19,12 +19,13 @@ function listServers(userId) {
           for (const server of servers) {
             const serverListItemElement = document.createElement('li');
             //console.log(serverListItemElement);
-            serverListItemElement.textContent = server.name;
+            //serverListItemElement.textContent = server.name;
+            serverListItemElement.textContent = server.user_id;
             serverListElement.appendChild(serverListItemElement); 
             // Agrega un evento clic a cada elemento de la lista de servidores
             serverListItemElement.addEventListener('click', function() {
               // Obtiene el ID del servidor seleccionado
-              const serverId = server.server_id;
+              const serverId = server.member_id;
               //console.log(serverId); 
               // Muestra los canales del servidor seleccionado
               showChannels(serverId);
