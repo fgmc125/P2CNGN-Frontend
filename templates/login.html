@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <!--Estilo de css-->
+    <link rel="stylesheet" href="style/default.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="loginForm">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
+ <div class="Container">
+    <div class="box">
+        
+        <form class= "form" id="loginForm">
+        <h1>Login</h1>
+        <label for="username"></label>
+        <input type="text" id="username" name="username" placeholder="username">
         <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="password"></label>
+        <input type="password" id="password" name="password" placeholder="password">
         <br>
         <button type="submit">Login</button>
     </form>
-    <a href="signup.html"><input type="button" value="Signup"></a>
+    <a href="signup.html">
+        <input type="button" value="Signup">
+    </a>
     <div id="message"></div>
-    
+    </div>
+</div>
+
     <script src="/scripts/login.js"></script>
 </body>
 </html>
