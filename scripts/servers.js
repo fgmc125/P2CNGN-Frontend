@@ -68,7 +68,7 @@ function listServers(userId) {
             channelListItemElement.addEventListener('click', function() {
             // Obtiene el nombre del canal seleccionado
             const channelId = channel.channel_id;
-            console.log(channelId)    
+            //console.log(channelId)    
             // Muestra el canal seleccionado
             showChannel(channelId);
             });
@@ -89,9 +89,6 @@ function listServers(userId) {
       document.getElementById("message").innerHTML = "An error occurred.";
     });
   }
-
-
-  // Función para mostrar todos los mensajes del canal seleccionado ordenados por fecha
 // Función para mostrar todos los mensajes del canal seleccionado ordenados por fecha
 async function showChannel(channelId) {
     // Obtiene la lista de mensajes del canal seleccionado
@@ -114,9 +111,9 @@ async function showChannel(channelId) {
       messageListElement.innerHTML = '';
       for (const message of messages) {
         // Obtiene el nombre del usuario que creó el mensaje
-        console.log(message.id_users);
+        //console.log(message.id_users);
         const userName = await getUserName(message.id_users);
-        console.log(userName);  
+        //console.log(userName);  
 
         // Crea un elemento de lista para el mensaje
         const messageListItemElement = document.createElement('li');
@@ -172,6 +169,17 @@ async function showChannel(channelId) {
       throw new Error("An error occurred while getting the user.");
     }
   }  
+  
+
+
+
+
+  //const channelId = showChannel();
+  //console.log(channelId);
+
+
+
+
   
   function getProfile() {
     const url = "http://127.0.0.1:5000/user/profile";

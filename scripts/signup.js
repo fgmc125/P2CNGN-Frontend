@@ -9,8 +9,10 @@ function signup() {
         password: document.getElementById("password").value,
         email: document.getElementById("email").value,
     };
+    
 
     fetch("http://127.0.0.1:5000/user/signup", {
+        
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,7 +28,13 @@ function signup() {
             });
         } else {
             return response.json().then(data => {
-                document.getElementById("message").innerHTML = data.message;
+                if (data.error) {
+                    document.getElementById("message").innerHTML = data.error.description;
+                  } else {
+                    document.getElementById("message").innerHTML = data.message;
+                  }
+
+                //document.getElementById("message").innerHTML = data.message.description;
             });
         }
     })

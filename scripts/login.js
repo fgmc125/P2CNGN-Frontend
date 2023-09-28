@@ -26,6 +26,7 @@ function login() {
         } else {
             return response.json().then(data => {
                 document.getElementById("message").innerHTML = data.message;
+                
             });
         }
     })
