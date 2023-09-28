@@ -5,14 +5,14 @@ const openModal = (modalId) => {
     const modal = document.getElementById(modalId);
     if (modal) {
         console.log("modal")
-        //modal.showModal();
+        modal.showModal();
         modal.classList.add('is-active');
     }
 }
 
 const closeModal= () => {
     modals.forEach((modal) => {
-        //modal.close();
+        modal.close();
         modal.classList.remove('is-active');
     });
 }
