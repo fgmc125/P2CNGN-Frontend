@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/custom-styles.css">
+    <style>
+        .column {
+            flex: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container is-red" style="padding-left: 0px; padding-right: 0px; height: 100vh; ">
+        <div class="row" style="height: 100vh;">
+            <!-- Columna de servidores -->
+            <nav class="column has-min-width justify-content-center" style="background-color: #1E1F22; width: 72px;">
+                <div class="container justify-content-space-between">
+                    <div class="row" style="flex-grow: 0">
+                        <ul class="column-icon mb-0">
+                            <li class="decoration-no mb-2">
+                                <!-- Creador de Nuevo Servidor -->
+                                <a id="createServer" onclick="openModal('newServerModal')" data-target="newServerModal">
+                                    <i class="fa-solid fa-circle-plus is-size-1"></i>
+                                </a>
+                            </li>
+                            <li class="decoration-no mb-2">
+                                <!-- Buscador de Servidores -->
+                                <a href="#">
+                                    <i class="fa-solid fa-circle-info is-size-1"></i>
+                                </a>
+                            </li>
+                            <li class="decoration-no mb-2">
+                                <!-- Control de ScrollUp de la Lista de Servidores -->
+                                <a href="#">
+                                    <i class="fa-brands fa-gg-circle is-size-1"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row" style="flex-grow: 1; min-height: 78px; overflow-y: auto; overflow-x: hidden;">
+                        <ul id="serverList" class="column-icon my-0 justify-content-flex-start" style="flex-grow: 1">
+                            <!-- INICIO DE CARGA DINAMICA DE SERVIDORES DEL USUARIO -->
+
+                            <!-- FIN DE CARGA DINAMICA DE SERVIDORES DEL USUARIO -->
+                        </ul>
+                    </div>
+                    <div class="row" style="flex-grow: 0">
+                        <ul class="column-icon">
+                            <li class="decoration-no mb-2">
+                                <!-- Control de ScrollDown de la Lista de Servidores -->
+                                <a href="#">
+                                    <i class="fa-brands fa-gg-circle is-size-1"></i>
+                                </a>
+                            </li>
+                            <li class="decoration-no mb-2">
+                                <!-- Mostrar Opciones de Perfil -->
+                                <a id="username" class="decoration-no" onclick="logout()" data-tooltip="">
+                                    <i class="fa-solid fa-circle-user is-size-1"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Columna Principal -->
+            <div class="column">
+                <div class="container has-full-width px-0">
+                    <div class="row has-full-height">
+                        <!-- Columna de canales -->
+                        <div class="column px-1 has-min-width" style="background-color: #2B2D31; min-width: 200px;">
+                            <div class="container justify-content-space-between">
+                                <div class="row">
+                                    <div class="column">
+                                        <h2 class="my-3">#Canales</h2>
+                                    </div>
+                                </div>
+                                <div class="row has-full-height">
+                                    <div class="column">
+                                        <ul id="channelList" class="column-icon justify-content-flex-start my-0 message-container">
+                                            <!-- INICIO DE CARGA DINAMICA DE CANALES DEL SERVIDOR ACTIVO -->
+                                            <!-- FIN DE CARGA DINAMICA DE CANALES DEL SERVIDOR ACTIVO -->
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row m-3">
+                                    <div class="column">
+                                        <button class="button is-primary has-full-width" id="createChannel"
+                                            onclick="openModal('newChannelModal')">
+                                            Crear Canal
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Columna de mensajes -->
+                        <div class="column has-full-width" style="background-color: #35373C;">
+                            <div class="container has-full-width justify-content-space-between">
+                                <div class="row">
+                                    <div class="column">
+                                        <h2 class="my-3">&Mensajes</h2>
+                                    </div>
+                                </div>
+                                <div class="row has-full-height message-container">
+                                    <div class="column">
+                                        <div id="messageList" class="container has-full-width justify-content-flex-end is-flex-direction-column" style="overflow-x: auto;">
+                                            <!-- INICIO DE CARGA DINAMICA DE MENSAJES DEL CANAL ACTIVO -->
+                                            <div class="row mt-2">
+                                                <div class="column justify-content-flex-start">
+                                                    <div class="container fluid align-content-center px-0">
+                                                        <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
+                                                            <div class="column has-min-width align-items-center">
+                                                                <i class="fa-brands fa-gg-circle is-size-1"></i>
+                                                            </div>
+                                                            <div class="column mx-2 box"> 
+                                                                <p style="max-width: 100%;">
+                                                                    text
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- FIN DE CARGA DINAMICA DE MENSAJES DEL CANAL ACTIVO -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row my-3">
+                                    <div class="column">
+                                        <form id="messageForm" class="container has-full-width">
+                                            <div class="row field">
+                                                <div class="column control has-full-width me-2">
+                                                    <input id="messageInput" class="input has-full-width my-0" type="text"
+                                                        placeholder="Escribe un mensaje...">
+                                                </div>
+                                                <div class="column has-min-width">
+                                                    <button id="sendMessage" 
+                                                    class="button is-primary" 
+                                                    type="submit">
+                                                    Enviar
+                                                </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana modal para Nuevo Servidor -->
+    <dialog id="newServerModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Nuevo Servidor</p>
+                <button class="delete" aria-label="close" onclick="closeModal('newServerModal')"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="serverForm" enctype="multipart/form-data">
+                    <div class="field">
+                        <label class="label">Nombre del Servidor:</label>
+                        <div class="control">
+                            <input class="input" type="text" id="serverName" name="serverName" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Descripción del Servidor:</label>
+                        <div class="control">
+                            <textarea class="textarea" id="serverDescription" name="serverDescription"
+                                required></textarea>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Categoría del Servidor:</label>
+                        <div class="control">
+                            <div class="select is-fullwidth">
+                                <select id="serverCategory" name="serverCategory">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Imagen del Servidor:</label>
+                        <div class="control">
+                            <input class="input" type="file" id="serverImage" name="serverImage" accept="image/*">
+                        </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Crear Servidor</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </dialog>
+
+    <!-- Ventana modal para Nuevo Canal -->
+    <dialog id="newChannelModal" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Nuevo Canal</p>
+                <button class="delete" aria-label="close" onclick="closeModal('newChannelModal')"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="serverForm" enctype="multipart/form-data">
+                    <div class="field">
+                        <label class="label">Nombre del Canal:</label>
+                        <div class="control">
+                            <input class="input" type="text" id="serverName" name="serverName" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary" type="submit">Crear Canal</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </dialog>
+    <script src="../scripts/main.js"></script>
+    <script src="../scripts/servers.js"></script>
+    <!--<script src="../scripts/channels.js"></script>-->
+</body>
+
+</html>
