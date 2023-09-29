@@ -1,0 +1,58 @@
+.cuerpo {
+    background-color: #424242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    max-width: 600px; /* Limitar el ancho del contenedor */
+}
+
+.card {
+    flex: 1;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 100%; /* Asegura que la imagen no supere el tamaño de la card */
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    object-fit: cover;
+}
+
+.user-info {
+    text-align: left;
+    padding: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
