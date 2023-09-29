@@ -1,1 +1,0 @@
- archivos .css donde se definen todos los estilos de la aplicación frontend.

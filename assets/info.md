@@ -1,1 +1,0 @@
-recursos gráficos como imágenes, fuentes, íconos, etc.
