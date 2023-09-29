@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página</title>
+    <link rel="stylesheet" href="style/default.css">
+</head>
+<body class="cuerpo">
+    <div class="container">
+        <div class="card">
+            <img src="../asset/fondo.jpg" alt="Imagen de perfil" class="profile-image">
+        </div>
+        <div class="card user-info">
+            <div class="info" id="info">
+                <div id="message">
+                    <h1>User Profile</h1>
+                    <p><strong>Username:</strong> <span id="username"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Password:</strong> <span id="password"></span></p>
+                    <p><strong>Imagen:</strong> <span id="img"></span></p>
+                </div>
+                <button id="edit-button">Modificar</button>
+            </div>
+            <div class="edit-form" id="edit-form" style="display: none;">
+                <h1>Modificar datos</h1>
+                <input type="text" id="new-email" placeholder="Nuevo Correo Electrónico"><br>
+                <input type="password" id="current-password" placeholder="Contraseña Actual"><br>
+                <input type="password" id="new-password" placeholder="Nueva Contraseña"><br>
+                <button id="save-button">Guardar</button>
+                <button id="cancel-button">Cancelar</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        const editButton = document.getElementById('edit-button');
+        const editForm = document.getElementById('edit-form');
+        const saveButton = document.getElementById('save-button');
+        const cancelButton = document.getElementById('cancel-button');
+
+        editButton.addEventListener('click', () => {
+            const info = document.getElementById('info');
+            const form = document.getElementById('edit-form');
+
+            info.style.display = 'none';
+            form.style.display = 'block';
+        });
+
+        cancelButton.addEventListener('click', () => {
+            const info = document.getElementById('info');
+            const form = document.getElementById('edit-form');
+
+            info.style.display = 'block';
+            form.style.display = 'none';
+        });
+
+        saveButton.addEventListener('click', () => {
+            const newEmail = document.getElementById('new-email').value;
+            const currentPassword = document.getElementById('current-password').value;
+            const newPassword = document.getElementById('new-password').value;
+
+            // Aquí puedes agregar la lógica para guardar los cambios en el servidor
+            // y luego redirigir a la página de visualización de datos.
+
+            // Por ahora, simplemente ocultamos el formulario de edición.
+            editForm.style.display = 'none';
+
+            // Mostrar los datos de la vista anterior
+            const info = document.getElementById('info');
+            info.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
