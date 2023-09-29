@@ -44,23 +44,9 @@
                         </ul>
                     </div>
                     <div class="row" style="flex-grow: 1; min-height: 78px; overflow-y: auto; overflow-x: hidden;">
-                        <ul class="column-icon my-0 justify-content-flex-start" style="flex-grow: 1">
+                        <ul id="serverList" class="column-icon my-0 justify-content-flex-start" style="flex-grow: 1">
                             <!-- INICIO DE CARGA DINAMICA DE SERVIDORES DEL USUARIO -->
-                            <li class="decoration-no mb-2">
-                                <a href="#">
-                                    <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                </a>
-                            </li>
-                            <li class="decoration-no mb-2">
-                                <a href="#">
-                                    <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                </a>
-                            </li>
-                            <li class="decoration-no mb-2">
-                                <a href="#">
-                                    <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                </a>
-                            </li>
+
                             <!-- FIN DE CARGA DINAMICA DE SERVIDORES DEL USUARIO -->
                         </ul>
                     </div>
@@ -74,7 +60,7 @@
                             </li>
                             <li class="decoration-no mb-2">
                                 <!-- Mostrar Opciones de Perfil -->
-                                <a class="decoration-no" href="#">
+                                <a id="username" class="decoration-no" onclick="logout()" data-tooltip="">
                                     <i class="fa-solid fa-circle-user is-size-1"></i>
                                 </a>
                             </li>
@@ -96,13 +82,8 @@
                                 </div>
                                 <div class="row has-full-height">
                                     <div class="column">
-                                        <ul class="column-icon justify-content-flex-start my-0 message-container">
+                                        <ul id="channelList" class="column-icon justify-content-flex-start my-0 message-container">
                                             <!-- INICIO DE CARGA DINAMICA DE CANALES DEL SERVIDOR ACTIVO -->
-                                            <li>Canal 1 - Servidor 1</li>
-                                            <li>Canal 2 - Servidor 1</li>
-                                            <li>Canal 3 - Servidor 1</li>
-                                            <!-- Si no tiene ningún canal creado, muestra un mensaje -->
-                                            <li>No hay canales en este servidor.</li>
                                             <!-- FIN DE CARGA DINAMICA DE CANALES DEL SERVIDOR ACTIVO -->
                                         </ul>
                                     </div>
@@ -127,23 +108,9 @@
                                 </div>
                                 <div class="row has-full-height message-container">
                                     <div class="column">
-                                        <div class="container has-full-width justify-content-flex-end is-flex-direction-column" style="overflow-x: auto;">
+                                        <div id="messageList" class="container has-full-width justify-content-flex-end is-flex-direction-column" style="overflow-x: auto;">
                                             <!-- INICIO DE CARGA DINAMICA DE MENSAJES DEL CANAL ACTIVO -->
                                             <div class="row mt-2">
-                                                <div class="column justify-content-flex-end">
-                                                    <div class="container fluid align-content-center px-0">
-                                                        <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
-                                                            <div class="column has-min-width align-items-center">
-                                                                <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                                            </div>
-                                                            <div class="column mx-2 box">
-                                                               Hola, ¿cómo están todos? 
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
                                                 <div class="column justify-content-flex-start">
                                                     <div class="container fluid align-content-center px-0">
                                                         <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
@@ -151,81 +118,8 @@
                                                                 <i class="fa-brands fa-gg-circle is-size-1"></i>
                                                             </div>
                                                             <div class="column mx-2 box"> 
-                                                                <p style="max-width: 100%;">¡Hola! Estamos bien, gracias.sssssssss assaddas sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="column justify-content-flex-start">
-                                                    <div class="container fluid align-content-center px-0">
-                                                        <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
-                                                            <div class="column has-min-width align-items-center">
-                                                                <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                                            </div>
-                                                            <div class="column mx-2 box">
-                                                                Buenas tardes a todos.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="column justify-content-flex-start">
-                                                    <div class="container fluid align-content-center px-0">
-                                                        <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
-                                                            <div class="column has-min-width align-items-center">
-                                                                <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                                            </div>
-                                                            <div class="column mx-2 box"> 
-                                                                <p style="max-width: 100%;">¡Hola! Estamos bien, gracias.sssssssss assaddas sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="column justify-content-flex-start">
-                                                    <div class="container fluid align-content-center px-0">
-                                                        <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
-                                                            <div class="column has-min-width align-items-center">
-                                                                <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                                            </div>
-                                                            <div class="column mx-2 box"> 
-                                                                <p style="max-width: 100%;">¡Hola! Estamos bien, gracias.sssssssss assaddas sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="column justify-content-flex-start">
-                                                    <div class="container fluid align-content-center px-0">
-                                                        <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
-                                                            <div class="column has-min-width align-items-center">
-                                                                <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                                            </div>
-                                                            <div class="column mx-2 box"> 
-                                                                <p style="max-width: 100%;">¡Hola! Estamos bien, gracias.sssssssss assaddas sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad
-                                                                </p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-2">
-                                                <div class="column justify-content-flex-start">
-                                                    <div class="container fluid align-content-center px-0">
-                                                        <div class="row" style="flex-grow: 0; flex-shrink:0; max-width: fit-content;">
-                                                            <div class="column has-min-width align-items-center">
-                                                                <i class="fa-brands fa-gg-circle is-size-1"></i>
-                                                            </div>
-                                                            <div class="column mx-2 box"> 
-                                                                <p style="max-width: 100%;">¡Hola! Estamos bien, gracias.sssssssss assaddas sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad sadasdsad sadasdasd adsdad asd asdasd asdasd asdasdasd sa dasd asd asd asdasdasdsad
+                                                                <p style="max-width: 100%;">
+                                                                    text
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -238,14 +132,18 @@
                                 </div>
                                 <div class="row my-3">
                                     <div class="column">
-                                        <form class="container has-full-width">
+                                        <form id="messageForm" class="container has-full-width">
                                             <div class="row field">
                                                 <div class="column control has-full-width me-2">
-                                                    <input class="input has-full-width my-0" type="text"
+                                                    <input id="messageInput" class="input has-full-width my-0" type="text"
                                                         placeholder="Escribe un mensaje...">
                                                 </div>
                                                 <div class="column has-min-width">
-                                                    <button class="button is-primary" type="submit">Enviar</button>
+                                                    <button id="sendMessage" 
+                                                    class="button is-primary" 
+                                                    type="submit">
+                                                    Enviar
+                                                </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -331,9 +229,9 @@
             </section>
         </div>
     </dialog>
-    <script src="../scripts/channels.js"></script>
-    <script src="../scripts/servers.js"></script>
     <script src="../scripts/main.js"></script>
+    <script src="../scripts/servers.js"></script>
+    <!--<script src="../scripts/channels.js"></script>-->
 </body>
 
 </html>
